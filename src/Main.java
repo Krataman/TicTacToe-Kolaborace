@@ -8,8 +8,7 @@ public class Main {
             try {
                 System.out.println("""
                         press 0 to end the program
-                        press 1 for 3x3 grid for 2 players
-                        press 2 for a 4-10 grid for 2 players""");
+                        press 1 for a 4-10 grid for 2 players""");
                 Scanner sc = new Scanner(System.in);
                 int choice = sc.nextInt();
                 if (choice < 3) {
@@ -17,11 +16,7 @@ public class Main {
                         case 0:b=false;
                             break;
                         case 1:
-                            Base base = new Base(true);
-                            base.start();
-                            break;
-                        case 2:
-                            Base size = new MoreSizes(true);
+                            MoreSizes size = new MoreSizes(true);
                             size.start();
                             break;
                     }

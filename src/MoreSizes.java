@@ -1,6 +1,13 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
-public class MoreSizes extends Base{
+public class MoreSizes{
+    boolean type;
+    String s;
+    ArrayList<String> textControl = new ArrayList<>();
+    ArrayList<String> a = new ArrayList<>();
+    ArrayList<String> check = new ArrayList<>();
 
     private int size;
     public void setSize(int size) {
@@ -8,7 +15,7 @@ public class MoreSizes extends Base{
     }
 
     public MoreSizes(boolean type) {
-        super(type);
+        this.type = type;
     }
 
     /**
@@ -204,5 +211,30 @@ public class MoreSizes extends Base{
                 b = playAgain();
             }
         }
+    }
+    public boolean playAgain() {
+        System.out.println("play again? [Y/N]");
+        boolean b = true;
+        String choice = "";
+        while (b) {
+            Scanner sc = new Scanner(System.in);
+            try {
+                choice = sc.next();
+                if (choice.equalsIgnoreCase("y") || choice.equalsIgnoreCase("n")) {
+                    b = false;
+                } else {
+                    System.out.println("there was a formating error");
+                }
+            } catch (Exception e) {
+                System.out.println("error has been found");
+            }
+
+        }
+        if (choice.equalsIgnoreCase("y")) {
+            Collections.fill(a, " ");
+            check.clear();
+            return true;
+        }
+        return false;
     }
 }
